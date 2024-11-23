@@ -15,8 +15,6 @@ FoodSaver es una aplicación web diseñada para ayudar a reducir el desperdicio 
 ### Árbol de Directorios
 ```
 foodsaver/
-├── public/
-│   └── vite.svg
 ├── src/
 │   ├── components/
 │   │   ├── Buscador.tsx           # Componente de búsqueda
