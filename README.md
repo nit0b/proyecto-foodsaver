@@ -72,7 +72,7 @@ foodsaver/
 
 1. Clona el repositorio
 ```bash
-git clone https://github.com/tu-usuario/foodsaver.git
+git clone https://github.com/nit0b/proyecto-foodsaver
 cd foodsaver
 ```
 
