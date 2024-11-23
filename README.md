@@ -1,164 +1,157 @@
-# FoodSaver - Documentación
+# FoodSaver - Reduce el desperdicio alimentario
 
-## Índice
-1. [Descripción General](#descripción-general)
-2. [Estructura del Proyecto](#estructura-del-proyecto)
-3. [Manual de Usuario](#manual-de-usuario)
-4. [Guía de Mantenimiento](#guía-de-mantenimiento)
-5. [Características Técnicas](#características-técnicas)
+Aplicación web para gestionar alimentos y reducir el desperdicio alimentario, desarrollada con React, TypeScript, Tailwind CSS y Vite.
 
-## Descripción General
-FoodSaver es una aplicación web diseñada para ayudar a reducir el desperdicio alimentario mediante la gestión inteligente de alimentos y sus fechas de caducidad. La aplicación permite a los usuarios realizar un seguimiento de sus alimentos, recibir notificaciones sobre productos próximos a caducar y obtener sugerencias de recetas basadas en los ingredientes disponibles.
+## 📑 Índice
 
-## Estructura del Proyecto
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Componentes](#componentes)
 
-### Árbol de Directorios
+## ✨ Características
+
+- Gestión de alimentos con fechas de caducidad
+- Sistema de notificaciones para alimentos próximos a caducar
+- Sugerencias de recetas basadas en ingredientes disponibles
+- Filtros por preferencias dietéticas
+- Estadísticas avanzadas con gráficos
+- Consejos para reducir el desperdicio
+- Modo oscuro/claro
+- Interfaz responsive
+
+## 🛠 Tecnologías
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Chart.js
+- Framer Motion
+- Lucide Icons
+
+## 📁 Estructura del Proyecto
+
 ```
 foodsaver/
 ├── src/
 │   ├── components/
-│   │   ├── Buscador.tsx           # Componente de búsqueda
-│   │   ├── ConsejosDesperdicio.tsx    # Consejos para reducir desperdicio
-│   │   ├── EstadisticasAvanzadas.tsx  # Visualización de estadísticas
-│   │   ├── FormularioAlimento.tsx     # Formulario CRUD de alimentos
-│   │   ├── ListaAlimentos.tsx         # Lista principal de alimentos
-│   │   ├── Login.tsx                  # Autenticación de usuario
-│   │   ├── Notificaciones.tsx         # Sistema de notificaciones
-│   │   ├── PerfilUsuario.tsx          # Gestión de perfil
-│   │   └── SugerenciasRecetas.tsx     # Recomendador de recetas
+│   │   ├── Buscador.tsx
+│   │   ├── ConsejosDesperdicio.tsx
+│   │   ├── Estadisticas.tsx
+│   │   ├── EstadisticasAvanzadas.tsx
+│   │   ├── FormularioAlimento.tsx
+│   │   ├── ListaAlimentos.tsx
+│   │   ├── Login.tsx
+│   │   ├── Notificaciones.tsx
+│   │   ├── PerfilUsuario.tsx
+│   │   └── SugerenciasRecetas.tsx
 │   ├── data/
-│   │   └── recetas.ts            # Base de datos de recetas
-│   ├── types.ts                  # Definiciones de TypeScript
-│   ├── App.tsx                   # Componente principal
-│   ├── main.tsx                  # Punto de entrada
-│   └── index.css                 # Estilos globales
-├── package.json                  # Dependencias y scripts
-├── tsconfig.json                 # Configuración de TypeScript
-├── vite.config.ts               # Configuración de Vite
-└── tailwind.config.js           # Configuración de Tailwind
+│   │   └── recetas.ts
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   ├── types.ts
+│   └── vite-env.d.ts
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-### Dependencias Principales
-```json
-{
-  "dependencies": {
-    "react": "^18.3.1",
-    "chart.js": "^4.3.0",
-    "framer-motion": "^10.12.16",
-    "lucide-react": "^0.344.0"
-  }
-}
+## 🚀 Instalación
+
+1. Clona el repositorio
+```bash
+git clone https://github.com/tu-usuario/foodsaver.git
+cd foodsaver
 ```
 
-## Manual de Usuario
+2. Instala las dependencias
+```bash
+npm install
+```
 
-### 1. Inicio de Sesión
-1. Acceder a la aplicación
-2. Pulsar "Iniciar sesión con cuenta demo"
-3. El sistema cargará datos de ejemplo
+3. Inicia el servidor de desarrollo
+```bash
+npm run dev
+```
 
-### 2. Gestión de Alimentos
+## 💻 Uso
 
-#### Añadir Alimento
-1. Pulsar botón "Añadir Alimento"
-2. Rellenar el formulario:
-   - Nombre del alimento
-   - Fecha de caducidad
-   - Cantidad
-   - Categoría (autodetectada)
-3. Opcional: Usar botón de escaneo para demo
+1. Inicia sesión con la cuenta demo
+2. Añade alimentos manualmente o usa el botón "Añadir Todos"
+3. Gestiona tus alimentos:
+   - Edita o elimina alimentos
+   - Visualiza fechas de caducidad
+   - Recibe notificaciones
+4. Explora recetas sugeridas basadas en tus ingredientes
+5. Consulta estadísticas y consejos
 
-#### Editar Alimento
-1. Localizar el alimento en la lista
-2. Pulsar el icono de edición
-3. Modificar los campos necesarios
-4. Guardar cambios
+## 🧩 Componentes
 
-#### Eliminar Alimento
-1. Localizar el alimento
-2. Pulsar el icono de papelera
-3. Confirmar eliminación
+### App.tsx
+- Componente principal
+- Gestión de estado global
+- Enrutamiento y navegación
 
-### 3. Notificaciones
-- Icono de campana en la cabecera
-- Punto rojo indica notificaciones nuevas
-- Filtrar por tipo: caducados/próximos
+### Buscador.tsx
+- Filtrado de alimentos
+- Búsqueda en tiempo real
 
-### 4. Recetas Sugeridas
-1. Acceder a sección "Sugerencias de Recetas"
-2. Configurar preferencias dietéticas
-3. Explorar recetas recomendadas
-4. Ver detalles pulsando "Ver receta"
+### ConsejosDesperdicio.tsx
+- Consejos dinámicos
+- Recomendaciones personalizadas
 
-### 5. Estadísticas
-- Cambiar entre gráfico circular/barras
-- Consultar métricas de ahorro
-- Ver distribución por categorías
+### Estadisticas.tsx
+- Gráficos básicos
+- Resumen de alimentos
+- Distribución por categorías
 
-## Guía de Mantenimiento
+### EstadisticasAvanzadas.tsx
+- Gráficos interactivos avanzados
+- Métricas de ahorro
+- Análisis detallado de desperdicios
+- Visualización temporal de caducidades
 
-### Actualización de Dependencias
-1. Revisar `package.json`
-2. Ejecutar `npm update`
-3. Verificar compatibilidad
-4. Actualizar tipos si necesario
+### FormularioAlimento.tsx
+- Añadir/editar alimentos
+- Validación de datos
+- Escaneo simulado
+- Autocompletado de categorías
 
-### Gestión de Estado
-- Estado global en App.tsx
-- Estados locales en componentes
-- Persistencia en localStorage
+### ListaAlimentos.tsx
+- Visualización de alimentos
+- Ordenación y filtrado
+- Acciones rápidas
+- Indicadores de caducidad
 
-### Base de Datos de Recetas
-1. Editar `src/data/recetas.ts`
-2. Seguir estructura TypeScript
-3. Mantener categorías consistentes
+### Login.tsx
+- Autenticación demo
+- Interfaz de inicio de sesión
+- Animaciones de transición
 
-### Mantenimiento de Componentes
-1. Verificar props y tipos
-2. Mantener lógica separada
-3. Actualizar estilos Tailwind
+### Notificaciones.tsx
+- Sistema de alertas
+- Notificaciones por caducidad
+- Gestión de estados de lectura
 
-### Monitorización
-- Revisar consola de errores
-- Verificar rendimiento
-- Comprobar accesibilidad
+### PerfilUsuario.tsx
+- Gestión de perfil
+- Preferencias de usuario
+- Modo compacto/completo
 
-### Backups y Versionado
-1. Mantener copias de seguridad
-2. Documentar cambios
-3. Seguir semver
-
-## Características Técnicas
-
-### Tecnologías Utilizadas
-- React 18.3.1
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Chart.js
-- Lucide Icons
-
-### Rendimiento
-- Lazy loading de componentes
-- Optimización de imágenes
-- Caché de datos locales
-
-### Accesibilidad
-- ARIA labels
-- Contraste de colores
-- Navegación por teclado
-
-### Responsive Design
-- Mobile-first
-- Breakpoints flexibles
-- Layouts adaptativos
-
-### Seguridad
-- Validación de inputs
-- Sanitización de datos
-- Protección XSS
-
-### Modo Oscuro
-- Tema persistente
-- Colores adaptados
-- Transiciones suaves
+### SugerenciasRecetas.tsx
+- Recomendaciones de recetas
+- Filtros dietéticos
+- Vista detallada de recetas
+- Preferencias alimentarias
